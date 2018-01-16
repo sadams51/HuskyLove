@@ -7,6 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     student_TeacherName: {type: DataTypes.STRING, validate: {notNull: true}},
 
     initial_Parent: {type: DataTypes.INTEGER},
+    
     first_Mate: {type: DataTypes.INTEGER},    
     first_Offspring: {type: DataTypes.INTEGER},
     first_Genotype: {type: DataTypes.INTEGER, validate: {len: [8, 8]}},    
