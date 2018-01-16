@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     student_TeacherName: {type: DataTypes.STRING, validate: {notNull: true}},
 
     initial_Parent: {type: DataTypes.INTEGER},
-    
+
     first_Mate: {type: DataTypes.INTEGER},    
     first_Offspring: {type: DataTypes.INTEGER},
     first_Genotype: {type: DataTypes.INTEGER, validate: {len: [8, 8]}},    
@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
     fifth_Offspring: {type: DataTypes.INTEGER},
     fifth_Genotype: {type: DataTypes.INTEGER, validate: {len: [8, 8]}},    
     fifth_HuskyImage: {type: DataTypes.STRING},        
-    ffth_createdAt: {createdAt: Sequelize.DATE},
+    fifth_createdAt: {createdAt: Sequelize.DATE},
 
     sixth_Mate: {type: DataTypes.INTEGER},    
     sixth_Offspring: {type: DataTypes.INTEGER},
