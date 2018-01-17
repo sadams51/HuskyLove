@@ -47,6 +47,7 @@ module.exports = function(sequelize, DataTypes) {
             isIn: [['T', 't']]
         }},    
     sexOne: {type: DataTypes.STRING,
+        defaultValue: 'X',
         validate: {
             len: [1, 1],
             isIn: [['X']]
