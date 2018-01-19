@@ -4,10 +4,11 @@ module.exports = function(passport, user) {
 	var User = user; 
 	var LocalStrategy = require('passport-local').Strategy;
 
+
 	passport.use('local-login', new LocalStrategy(
 
 		{
-			usernameField: 'email',
+			usernameField: 'id',
 			passwordField: 'password',
 			passReqToCallback: true
 		},
@@ -17,47 +18,51 @@ module.exports = function(passport, user) {
 
 		function(req, email, password, done) {
 
-			var generateHash = function(password) {
-				return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
-			};
+			var User = user; 
+
+			//compares password entered with the bCrypt comparison method 
+			//did we store our password with bCrypt
+			var isValidPassword = function(userpass, password) {
+
+				return bCrypt.compareSync(password, userpass);
+			}
 
 			User.findOne({
 				where: {
 					email: email
 				}
 			}).then(function(user) {
-				if (user)
-				{
+				if (!user) {
+
 					return done(null, false, {
-						message: "That email is already taken"
+						message: "ID does not exist"
 					});
-				} else 
-				{
-					var userPassword = generateHash(password);
-
-					var data = 
-						{
-							email: email, 
-							password: userPassword, 
-							firstname: req.body.firstname, 
-							lastname: req.body.lastname
-						};
-
-					User.create(data).then(function(newUser, created) {
-						if (!newUser) {
-							return done(null, false);
-						}
-						if (newUser) {
-							return done(null, newUser);
-						}
-					});
-
 				}
-				
+
+				if (!isValidPassword(user.password, password)) {
+					return done(null, false, {
+						message: "Incorrect password"
+					});
+				}
+
+				var userInfo = user.get();
+				return done(null, userinfo);
+
+			}).catch(function(err) {
+				console.log("Error:", err);
+
+				return done(null, false, {
+					message: "Something went wrong with your Login"
+				});
 			});
-		}
+		};
+				
+	});
+}
 
 	));
+
+
 
 	//serialize 
 	passport.serializeUser(function(user, done) {
@@ -73,8 +78,10 @@ module.exports = function(passport, user) {
 			} else {
 					done(user.errors, null);
 				}
-		});
-	});	
+		});	
+	});
+
+
 }		
 
 
