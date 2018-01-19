@@ -4,7 +4,9 @@
 
 // Dependencies
 // =============================================================
+
 var path = require("path");
+var db = require("../models");
 
 
 // Routes
@@ -22,6 +24,7 @@ module.exports = function(app) {
   // index route loads view.html
   app.get("/login", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
+
   });
 
   // index route loads view.html
@@ -32,7 +35,29 @@ module.exports = function(app) {
 
   // cms route loads cms.html
   app.get("/admin", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/admin.html"));
+    // res.sendFile(path.join(__dirname, "../public/admin.html"));
+    db.Students.findAll({
+
+    }).then(function(result) {
+      // response.json(result);
+      var hbsObject = { 
+        Students: result
+      };
+      // res.json(hbsObject);
+      res.render("admin", hbsObject);
+    });
+    
   });
 
 };
+
+
+
+
+
+
+
+
+
+
+
