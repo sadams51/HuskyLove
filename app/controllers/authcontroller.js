@@ -1,5 +1,5 @@
 var exports = module.exports = {}
 
-exports.signin = function(req, res) {
-	res.render('signin');
+exports.login = function(req, res) {
+	res.render('login');
 }
