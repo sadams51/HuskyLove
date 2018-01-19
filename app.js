@@ -10,6 +10,8 @@ var bodyParser = require('body-parser')
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars')
 
+var routes = require("./app/routes/html-routes.js")(app);
+
 
 //for BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,10 +28,12 @@ app.use(passport.session());
 
 //For Handlebars
 app.set('views', './app/views')
-app.engine('hbs', exphbs({
-	extname: '.hbs'
+app.engine('handlebars', exphbs({
+	// extname: 'handlebars',
+	layoutsDir:'app/views/layouts',
+	defaultLayout: "main"
 }));
-app.set('view engine', '.hbs');
+app.set('view engine', 'handlebars');
 
 
 
@@ -42,10 +46,10 @@ app.get('/', function(req, res) {
 var models = require("./app/models");
 
 //Routes
-var authRoute = require('./app/routes/auth.js')(app, passport);
+// var authRoute = require('./app/routes/auth.js')(app, passport);
 
-//load passport strategies 
-require('./app/config/passport/passport.js')(passport, models.user);
+// //load passport strategies 
+// require('./app/config/passport/passport.js')(passport, models.user);
 
 //Sync Database
 //importing the models, then calling the sequelize sync function
