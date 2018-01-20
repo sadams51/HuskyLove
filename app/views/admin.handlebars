@@ -4,7 +4,7 @@
 
 <!--#each does not work in tables....-->
 <div class="col-md-6">
- 	<table class="bootstrapTable">
+ 	<table id="myTable" class="tablesorter">
     	<thead> 
     		<tr>
 		        <th data-sortable= "true">student_Id</th>
@@ -110,3 +110,29 @@
 	    </tbody> 
 	</table> 
 </div>
+
+<script>
+    $(document).ready(function() { 
+        $("#myTable").tablesorter(); 
+    	}
+	); 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
