@@ -55,6 +55,8 @@ module.exports = function(sequelize, DataTypes) {
     eighth_Genotype: {type: DataTypes.INTEGER, validate: {len: [8, 8]}},    
     eighth_HuskyImage: {type: DataTypes.STRING},        
     eightht_createdAt: {type: DataTypes.DATE},
+  }, {
+    timestamps: false
   });
   return Students;
 };
