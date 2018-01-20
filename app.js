@@ -8,7 +8,11 @@ var session = require('express-session')
 var bodyParser = require('body-parser')
 //dot-env module to handle environment variables 
 var env = require('dotenv').load();
-var exphbs = require('express-handlebars')
+var exphbs = require('express-handlebars');
+
+var authController = require('./app/controllers/authcontroller.js');
+
+
 
 var routes = require("./app/routes/html-routes.js")(app);
 
@@ -27,18 +31,22 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //For Handlebars
+
 app.set('views', './app/views')
 app.engine('handlebars', exphbs({
-	// extname: 'handlebars',
-	layoutsDir:'app/views/layouts',
-	defaultLayout: "main"
+
+	defaultLayout: 'main',
+	layoutsDir: "./app/views/layouts/",
+	extname: '.handlebars'
+
+
 }));
 app.set('view engine', 'handlebars');
 
 
 
 app.get('/', function(req, res) {
-	res.send("Welcome to Passport with Sequelize");
+	res.render('login');
 });
 
 
