@@ -5,7 +5,7 @@ CREATE TABLE students (
 	student_Email VARCHAR(255) NOT NULL,
 	student_Name VARCHAR(255) NOT NULL,
 	student_Hour INT(1) NOT NULL,
-	student_TeacherName VARCHAR(255), NOT NULL,
+	student_TeacherName VARCHAR(255) NOT NULL,
 	initial_Parent INT(3),
 	first_Mate INT(3),
 	first_Offspring INT(3),

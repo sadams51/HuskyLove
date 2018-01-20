@@ -8,16 +8,17 @@ module.exports = function(passport, user) {
 	passport.use('local-login', new LocalStrategy(
 
 		{
-			usernameField: 'id',
-			passwordField: 'password',
+			usernameField: 'student_Email',
+			passwordField: 'student_Id',
 			passReqToCallback: true
 		},
 
 
 
 
-		function(req, email, password, done) {
-
+		function(req, student_Email, password, done) {
+			console.log("are we here");
+			console.log(student_Email);
 			var User = user; 
 
 			//compares password entered with the bCrypt comparison method 
@@ -55,12 +56,14 @@ module.exports = function(passport, user) {
 					message: "Something went wrong with your Login"
 				});
 			});
-		};
-				
-	});
-}
 
-	));
+		}
+
+	));	
+
+
+
+
 
 
 
