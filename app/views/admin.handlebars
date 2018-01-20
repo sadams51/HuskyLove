@@ -3,107 +3,110 @@
 <!--requirements for this page: student table (searchable/delete student), the add student button (takes you to form)-->
 
 <!--#each does not work in tables....-->
+<div class="col-md-6">
+ 	<table class="bootstrapTable">
+    	<thead> 
+    		<tr>
+		        <th data-sortable= "true">student_Id</th>
+				<th data-sortable= "true">student_Email</th>
+				<th data-sortable= "true">student_Name</th>
+				<th data-sortable= "true">student_Hour</th>
+				<th data-sortable= "true">student_TeacherName</th>
+				<th data-sortable= "true">initial_Parent</th>
+				<th data-sortable= "true">first_Mate</th>
+				<th data-sortable= "true">first_Offspring</th>
+				<th data-sortable= "true">first_Genotype</th>
+				<th data-sortable= "true">first_HuskyImage</th>
+				<th data-sortable= "true">first_createdAt</th>
+				<th data-sortable= "true">second_Mate</th>
+				<th data-sortable= "true">second_Offspring</th>
+				<th data-sortable= "true">second_Genotype</th>
+				<th data-sortable= "true">second_HuskyImage</th>
+				<th data-sortable= "true">second_createdAt</th>
+				<th data-sortable= "true">third_Mate</th>
+				<th data-sortable= "true">third_Offspring</th>
+				<th data-sortable= "true">third_Genotype</th>
+				<th data-sortable= "true">third_HuskyImage</th>
+				<th data-sortable= "true">third_createdAt</th>
+				<th data-sortable= "true">fourth_Mate</th>
+				<th data-sortable= "true">fourth_Offspring</th>
+				<th data-sortable= "true">fourth_Genotype</th>
+				<th data-sortable= "true">fourth_HuskyImage</th>
+				<th data-sortable= "true">fourth_createdAt</th>
+				<th data-sortable= "true">fifth_Mate</th>
+				<th data-sortable= "true">fifth_Offspring</th>
+				<th data-sortable= "true">fifth_Genotype</th>
+				<th data-sortable= "true">fifth_HuskyImage</th>
+				<th data-sortable= "true">fifth_createdAt</th>
+				<th data-sortable= "true">sixth_Mate</th>
+				<th data-sortable= "true">sixth_Offspring</th>
+				<th data-sortable= "true">sixth_Genotype</th>
+				<th data-sortable= "true">sixth_HuskyImage</th>
+				<th data-sortable= "true">sixth_createdAt</th>
+				<th data-sortable= "true">seventh_Mate</th>
+				<th data-sortable= "true">seventh_Offspring</th>
+				<th data-sortable= "true">seventh_Genotype</th>
+				<th data-sortable= "true">seventh_HuskyImage</th>
+				<th data-sortable= "true">seventh_createdAt</th>
+				<th data-sortable= "true">eighth_Mate</th>
+				<th data-sortable= "true">eighth_Offspring</th>
+				<th data-sortable= "true">eighth_Genotype</th>
+				<th data-sortable= "true">eighth_HuskyImage</th>
+				<th data-sortable= "true">eighth_createdAt</th>
+			</tr>
+    	</thead> 
 
- <table>
-    <thead> 
-        <th>student_Id</th>
-		<th>student_Email</th>
-		<th>student_Name</th>
-		<th>student_Hour</th>
-		<th>student_TeacherName</th>
-		<th>initial_Parent</th>
-		<th>first_Mate</th>
-		<th>first_Offspring</th>
-		<th>first_Genotype</th>
-		<th>first_HuskyImage</th>
-		<th>first_createdAt</th>
-		<th>second_Mate</th>
-		<th>second_Offspring</th>
-		<th>second_Genotype</th>
-		<th>second_HuskyImage</th>
-		<th>second_createdAt</th>
-		<th>third_Mate</th>
-		<th>third_Offspring</th>
-		<th>third_Genotype</th>
-		<th>third_HuskyImage</th>
-		<th>third_createdAt</th>
-		<th>fourth_Mate</th>
-		<th>fourth_Offspring</th>
-		<th>fourth_Genotype</th>
-		<th>fourth_HuskyImage</th>
-		<th>fourth_createdAt</th>
-		<th>fifth_Mate</th>
-		<th>fifth_Offspring</th>
-		<th>fifth_Genotype</th>
-		<th>fifth_HuskyImage</th>
-		<th>fifth_createdAt</th>
-		<th>sixth_Mate</th>
-		<th>sixth_Offspring</th>
-		<th>sixth_Genotype</th>
-		<th>sixth_HuskyImage</th>
-		<th>sixth_createdAt</th>
-		<th>seventh_Mate</th>
-		<th>seventh_Offspring</th>
-		<th>seventh_Genotype</th>
-		<th>seventh_HuskyImage</th>
-		<th>seventh_createdAt</th>
-		<th>eighth_Mate</th>
-		<th>eighth_Offspring</th>
-		<th>eighth_Genotype</th>
-		<th>eighth_HuskyImage</th>
-		<th>eighth_createdAt</th>
-    </thead> 
-    <tbody> 
-        {{#Students}} <!--needs to be title of all the info object (our students table?)-->
-        <tr> 
-            <td>{{student_Id}}</td>
-			<td>{{student_Email}}</td>
-			<td>{{student_Name}}</td>
-			<td>{{student_Hour}}</td>
-			<td>{{student_TeacherName}}</td>
-			<td>{{initial_Parent}}</td>
-			<td>{{first_Mate}}</td>
-			<td>{{first_Offspring}}</td>
-			<td>{{first_Genotype}}</td>
-			<td>{{first_HuskyImage}}</td>
-			<td>{{first_createdAt}}</td>
-			<td>{{second_Mate}}</td>
-			<td>{{second_Offspring}}</td>
-			<td>{{second_Genotype}}</td>
-			<td>{{second_HuskyImage}}</td>
-			<td>{{second_createdAt}}</td>
-			<td>{{third_Mate}}</td>
-			<td>{{third_Offspring}}</td>
-			<td>{{third_Genotype}}</td>
-			<td>{{third_HuskyImage}}</td>
-			<td>{{third_createdAt}}</td>
-			<td>{{fourth_Mate}}</td>
-			<td>{{fourth_Offspring}}</td>
-			<td>{{fourth_Genotype}}</td>
-			<td>{{fourth_HuskyImage}}</td>
-			<td>{{fourth_createdAt}}</td>
-			<td>{{fifth_Mate}}</td>
-			<td>{{fifth_Offspring}}</td>
-			<td>{{fifth_Genotype}}</td>
-			<td>{{fifth_HuskyImage}}</td>
-			<td>{{fifth_createdAt}}</td>
-			<td>{{sixth_Mate}}</td>
-			<td>{{sixth_Offspring}}</td>
-			<td>{{sixth_Genotype}}</td>
-			<td>{{sixth_HuskyImage}}</td>
-			<td>{{sixth_createdAt}}</td>
-			<td>{{seventh_Mate}}</td>
-			<td>{{seventh_Offspring}}</td>
-			<td>{{seventh_Genotype}}</td>
-			<td>{{seventh_HuskyImage}}</td>
-			<td>{{seventh_createdAt}}</td>
-			<td>{{eighth_Mate}}</td>
-			<td>{{eighth_Offspring}}</td>
-			<td>{{eighth_Genotype}}</td>
-			<td>{{eighth_HuskyImage}}</td>
-			<td>{{eighth_createdAt}}</td>
-        </tr> 
-        {{/Students}} 
-    </tbody> 
-</table> 
-
+	    <tbody> 
+	        {{#Students}} <!--needs to be title of all the info object (our students table?)-->
+	        <tr> 
+	            <td>{{student_Id}}</td>
+				<td>{{student_Email}}</td>
+				<td>{{student_Name}}</td>
+				<td>{{student_Hour}}</td>
+				<td>{{student_TeacherName}}</td>
+				<td>{{initial_Parent}}</td>
+				<td>{{first_Mate}}</td>
+				<td>{{first_Offspring}}</td>
+				<td>{{first_Genotype}}</td>
+				<td>{{first_HuskyImage}}</td>
+				<td>{{first_createdAt}}</td>
+				<td>{{second_Mate}}</td>
+				<td>{{second_Offspring}}</td>
+				<td>{{second_Genotype}}</td>
+				<td>{{second_HuskyImage}}</td>
+				<td>{{second_createdAt}}</td>
+				<td>{{third_Mate}}</td>
+				<td>{{third_Offspring}}</td>
+				<td>{{third_Genotype}}</td>
+				<td>{{third_HuskyImage}}</td>
+				<td>{{third_createdAt}}</td>
+				<td>{{fourth_Mate}}</td>
+				<td>{{fourth_Offspring}}</td>
+				<td>{{fourth_Genotype}}</td>
+				<td>{{fourth_HuskyImage}}</td>
+				<td>{{fourth_createdAt}}</td>
+				<td>{{fifth_Mate}}</td>
+				<td>{{fifth_Offspring}}</td>
+				<td>{{fifth_Genotype}}</td>
+				<td>{{fifth_HuskyImage}}</td>
+				<td>{{fifth_createdAt}}</td>
+				<td>{{sixth_Mate}}</td>
+				<td>{{sixth_Offspring}}</td>
+				<td>{{sixth_Genotype}}</td>
+				<td>{{sixth_HuskyImage}}</td>
+				<td>{{sixth_createdAt}}</td>
+				<td>{{seventh_Mate}}</td>
+				<td>{{seventh_Offspring}}</td>
+				<td>{{seventh_Genotype}}</td>
+				<td>{{seventh_HuskyImage}}</td>
+				<td>{{seventh_createdAt}}</td>
+				<td>{{eighth_Mate}}</td>
+				<td>{{eighth_Offspring}}</td>
+				<td>{{eighth_Genotype}}</td>
+				<td>{{eighth_HuskyImage}}</td>
+				<td>{{eighth_createdAt}}</td>
+	        </tr> 
+	        {{/Students}} 
+	    </tbody> 
+	</table> 
+</div>
