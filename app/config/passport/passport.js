@@ -1,7 +1,9 @@
 var bCrypt = require('bcrypt-nodejs');
 
-module.exports = function(passport, user) {
-	var User = user; 
+var Students = require("../../models/students.js");
+
+module.exports = function(passport, students) {
+	var User = Students; 
 	var LocalStrategy = require('passport-local').Strategy;
 
 
@@ -19,7 +21,7 @@ module.exports = function(passport, user) {
 		function(req, student_Email, password, done) {
 			console.log("are we here");
 			console.log(student_Email);
-			var User = user; 
+			var User = Students; 
 
 			//compares password entered with the bCrypt comparison method 
 			//did we store our password with bCrypt
@@ -30,7 +32,7 @@ module.exports = function(passport, user) {
 
 			User.findOne({
 				where: {
-					email: email
+					email: student_Email
 				}
 			}).then(function(user) {
 				if (!user) {
@@ -40,14 +42,14 @@ module.exports = function(passport, user) {
 					});
 				}
 
-				if (!isValidPassword(user.password, password)) {
+				if (!isValidPassword(user.student_Id, password)) {
 					return done(null, false, {
 						message: "Incorrect password"
 					});
 				}
 
-				var userInfo = user.get();
-				return done(null, userinfo);
+				var UserInfo = user.get();
+				return done(null, UserInfo);
 
 			}).catch(function(err) {
 				console.log("Error:", err);
@@ -69,13 +71,13 @@ module.exports = function(passport, user) {
 
 	//serialize 
 	passport.serializeUser(function(user, done) {
-		done(null, user.id);
+		done(null, Students.student_Id);
 	});
 
 	//deserialize user 
 	passport.deserializeUser(function(id, done) {
 
-		User.findById(id).then(function(user) {
+		User.findById(student_Id).then(function(user) {
 			if (user) {
 				done(null, user.get());
 			} else {

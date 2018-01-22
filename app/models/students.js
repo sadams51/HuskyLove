@@ -14,13 +14,13 @@ module.exports = function(sequelize, DataTypes) {
     first_HuskyImage: {type: DataTypes.STRING},        
     first_createdAt: {type: DataTypes.DATE},  
 
-    second_Parent: {type: DataTypes.INTEGER},    
+    second_Mate: {type: DataTypes.INTEGER},    
     second_Offspring: {type: DataTypes.INTEGER},        
     second_Genotype: {type: DataTypes.INTEGER, validate: {len: [8, 8]}},
     second_HuskyImage: {type: DataTypes.STRING},
     second_createdAt: {type: DataTypes.DATE},  
 
-    third_Parent: {type: DataTypes.INTEGER},    
+    third_Mate: {type: DataTypes.INTEGER},    
     third_Offspring: {type: DataTypes.INTEGER},        
     third_Genotype: {type: DataTypes.INTEGER, validate: {len: [8, 8]}},
     third_HuskyImage: {type: DataTypes.STRING},     
@@ -54,7 +54,7 @@ module.exports = function(sequelize, DataTypes) {
     eighth_Offspring: {type: DataTypes.INTEGER},
     eighth_Genotype: {type: DataTypes.INTEGER, validate: {len: [8, 8]}},    
     eighth_HuskyImage: {type: DataTypes.STRING},        
-    eightht_createdAt: {type: DataTypes.DATE},
+    eighth_createdAt: {type: DataTypes.DATE},
   }, {
     timestamps: false
   });

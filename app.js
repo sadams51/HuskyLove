@@ -50,14 +50,17 @@ app.get('/', function(req, res) {
 });
 
 
+app.use(express.static('public'));
+
+
 //Models 
 var models = require("./app/models");
 
 //Routes
-// var authRoute = require('./app/routes/auth.js')(app, passport);
+var authRoute = require('./app/routes/auth.js')(app, passport);
 
-// //load passport strategies 
-// require('./app/config/passport/passport.js')(passport, models.user);
+//load passport strategies 
+require('./app/config/passport/passport.js')(passport, models.Students);
 
 //Sync Database
 //importing the models, then calling the sequelize sync function
