@@ -3,25 +3,21 @@ var bCrypt = require('bcrypt-nodejs');
 var Students = require("../../models/students.js");
 
 module.exports = function(passport, students) {
-	var User = Students; 
+	var User = students; 
 	var LocalStrategy = require('passport-local').Strategy;
 
 
 	passport.use('local-login', new LocalStrategy(
 
 		{
-			usernameField: 'student_Email',
-			passwordField: 'student_Id',
+			usernameField: 'email',
+			passwordField: 'password',
 			passReqToCallback: true
 		},
 
-
-
-
-		function(req, student_Email, password, done) {
+		function(req, email, password, done) {
 			console.log("are we here");
-			console.log(student_Email);
-			var User = Students; 
+//			var User = Students; 
 
 			//compares password entered with the bCrypt comparison method 
 			//did we store our password with bCrypt
@@ -32,9 +28,10 @@ module.exports = function(passport, students) {
 
 			User.findOne({
 				where: {
-					email: student_Email
+					student_Email: email
 				}
 			}).then(function(user) {
+//				console.log(user);
 				if (!user) {
 
 					return done(null, false, {
@@ -63,21 +60,15 @@ module.exports = function(passport, students) {
 
 	));	
 
-
-
-
-
-
-
 	//serialize 
 	passport.serializeUser(function(user, done) {
-		done(null, Students.student_Id);
+		done(null, user.student_Id);
 	});
 
 	//deserialize user 
 	passport.deserializeUser(function(id, done) {
 
-		User.findById(student_Id).then(function(user) {
+		User.findById(id).then(function(user) {
 			if (user) {
 				done(null, user.get());
 			} else {

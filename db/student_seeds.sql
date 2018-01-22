@@ -1,7 +1,7 @@
 use husky_db;
 
 CREATE TABLE students (
-	student_Id INT(10) PRIMARY KEY NOT NULL,
+	student_Id VARCHAR(255) PRIMARY KEY NOT NULL,
 	student_Email VARCHAR(255) NOT NULL,
 	student_Name VARCHAR(255) NOT NULL,
 	student_Hour INT(1) NOT NULL,
@@ -50,8 +50,9 @@ CREATE TABLE students (
 );
 
 
-insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values (0000000001,"adams.sarahn@gmail.com","Sarah Adams","1","Smith");
-insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values (0000000002,"katvonallen@gmail.com","Kat Allen","2","Jones");
-insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values (0000000003,"ilearnarcheology@aol.com","Mia Hawkins","3","Jones");	
-insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values (0000000004,"thealexgroup@hotmail.com","Tim Alex","4","Smith");
+insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$pi8dEM3ohIkRiEk07qiAoeakQEWGo8kzX2gnBNa2lk5Llc8.ghomW","adams.sarahn@gmail.com","Sarah Adams","1","Smith");
+insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$4JG32gMYdfFhNGu87S0Wg.TXcinYNGzIGDUGJnqgSx1jkUmYfmO4C","katvonallen@gmail.com","Kat Allen","2","Jones");
+insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$0oVlVN844oR7TEe0ghDG1.9K3G0gLi/Ve/KBpSTSG39a10XMqmsmm","ilearnarcheology@aol.com","Mia Hawkins","3","Jones");	
+insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$1zFRhO8vciT9cH2M.LWPp.OUb.bLTJ2QMS64XW0OLJtQqKsZ0JaFG","thealexgroup@hotmail.com","Tim Alex","4","Smith");
+insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$448edPvWrWPUvHV9NmSaXOyl3iLK5Icl5bk5ZtPC/oeJurnsW3.jy","huskey_admin@bvnw.edu","Teacher Admin","8","Teachers");
 
