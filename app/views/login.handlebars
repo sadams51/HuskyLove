@@ -9,13 +9,27 @@
 </head>
  
 <body>
-    <form id="login" name="login" method="post" action="login">
-        <label for="email">Email Address</label>
-        <input class="text" name="email" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Login" />
-    </form>
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin"></h3>
+  <p class="instructions">Login with your email and student ID. Then enter the ID of your assigned husky and the ID of a mate of the opposite sex. After 18 hours, you'll see your puppy! </p>
+
+  <form id="login" name="login" method="post" action="login">
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input id="email" class="text form-control form-control-sm" name="email" type="email"/>
+
+      <label for="password">Password</label>
+      <input id="pswd" class="text form-control form-control-sm" name="password" type="password"/>
+      
+    </div>
+
+    <div>
+     <input id="loginBtn" class="btn btn-default btn-md" type="submit" name="Login">
+    </div>
+  </form>
+
+</div>
  
 </body>
  
