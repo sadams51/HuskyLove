@@ -7,7 +7,8 @@ module.exports = function(passport, students) {
 	var LocalStrategy = require('passport-local').Strategy;
 
 
-	passport.use('local-login', new LocalStrategy(
+
+	passport.use('student-login', new LocalStrategy(
 
 		{
 			usernameField: 'email',
@@ -27,10 +28,14 @@ module.exports = function(passport, students) {
 			}
 
 			User.findOne({
-				where: {
-					student_Email: email
-				}
-			}).then(function(user) {
+
+				email: student_Email }, 
+				function (err,user) {
+					
+			// 	where: {
+			// 		student_Email: email
+			// 	}
+			// }).then(function(user) {
 //				console.log(user);
 				if (!user) {
 
@@ -59,6 +64,25 @@ module.exports = function(passport, students) {
 		}
 
 	));	
+
+	// passport.use('admin-login', new LocalStrategy (
+
+
+	// 	{
+	// 		usernameField: 'huskey_admin@bvnw.edu',
+	// 		passwordField: '2018Admin',
+	// 		passReqToCallback: true
+	// 	}
+
+	// 	function(username, password, done){
+	// 		if (username) != 'huskey_admin@bvnw.edu' {
+	// 			return done(null, false, {
+	// 				message: "Incorrect login"
+	// 			});	
+	// 		}
+
+	// 	}	
+	// ));
 
 	//serialize 
 	passport.serializeUser(function(user, done) {

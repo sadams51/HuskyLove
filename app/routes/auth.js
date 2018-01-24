@@ -11,12 +11,28 @@ module.exports = function(app, passport) {
 
 	app.get('/login', authController.login);
 
-	app.post('/login', passport.authenticate('local-login', {
-			successRedirect: '/student',
+	app.post('/login', passport.authenticate('student-login', {
+			successRedirect: '/student', 
+		//=========================================//
+			//add to this: 
+				//function(req, res) {
+					// res.redirect('/students/' + req.user.username);
+				//});	
+		//==========================================//
 
-			failureRedirect: '/login'
+			failureRedirect: '/login',
 		}
 	));	
+
+	// app.post('/login', passport.authenticate('admin-login', {
+	// 	successRedirect: '/admin',
+
+	// 	failureRedirect: '/login'
+	// }
+	// ));	
+	
+
+
 
 
 
@@ -40,3 +56,5 @@ module.exports = function(app, passport) {
 
 
 }
+
+
