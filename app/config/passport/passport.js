@@ -27,14 +27,14 @@ module.exports = function(passport, students) {
 
 			User.findOne({
 
-				email: student_Email }, 
-				function (err,user) {
+//				email: student_Email }, 
+//				function (err,user) {
 					
-			// 	where: {
-			// 		student_Email: email
-			// 	}
-			// }).then(function(user) {
-//				console.log(user);
+			 	where: {
+			 		student_Email: email
+			 	}
+			 }).then(function(user) {
+				console.log(user);
 				if (!user) {
 
 					return done(null, false, {
