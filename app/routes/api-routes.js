@@ -8,6 +8,7 @@
 var path = require("path");
 var db = require("../models");
 var Sequelize = require('sequelize');
+var passport = require('passport')
 
 
 // // Routes
@@ -15,7 +16,7 @@ var Sequelize = require('sequelize');
 module.exports = function(app) {
 
   //student get and post routes
-  app.get("/student/get/:id", function(req, res) {
+  app.get("/student/get/:id", passport.authenticate(function(req, res) {
     db.Dogs.findOne({
       where:  {
         id: req.params.id
@@ -23,7 +24,7 @@ module.exports = function(app) {
     }).then(function(results) {
       res.json(results);
     });
-  });
+  }));
 
 //student get and post routes
 

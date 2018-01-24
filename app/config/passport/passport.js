@@ -102,6 +102,3 @@ module.exports = function(passport, students) {
 	});
 
 }		
-
-
-

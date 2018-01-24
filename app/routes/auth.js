@@ -4,12 +4,18 @@ var models = require("../../app/models");
 var authController = require('../controllers/authcontroller.js');
 
 
-
 module.exports = function(app, passport) {
 
-	app.get('/student', isLoggedIn, authController.student);
+	app.get('/admin',authController.admin);
+
+    app.get('/admin_add', authController.admin_add);
+
+	app.get('/student', isLoggedIn, isAdmin, authController.student);
+	app.get('/admin', isLoggedIn, authController.admin);
+	app.get('/admin_add', isLoggedIn, authController.admin_add);	
 
 	app.get('/login', authController.login);
+
 
 	app.post('/login', passport.authenticate('student-login', {
 			successRedirect: '/student', 
@@ -23,6 +29,7 @@ module.exports = function(app, passport) {
 			failureRedirect: '/login',
 		}
 	));	
+
 
 
 	// app.get('/logout', authController.logout);
@@ -45,15 +52,20 @@ module.exports = function(app, passport) {
 
 
 
-
-
 	function isLoggedIn(req, res, next) {
 		if (req.isAuthenticated())
 			return next();
-
 		res.redirect('/student');
 	}
 
+	function isAdmin(req, res, next) {
+		console.log(req.user);
+		if (req.user.student_Email === "huskey_admin@bvnw.edu")  {
+		res.redirect('/admin');
+		} else {
+		next();
+		}
+	}
 
 }
 
