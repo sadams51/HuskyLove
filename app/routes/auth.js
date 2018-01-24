@@ -25,6 +25,11 @@ module.exports = function(app, passport) {
 	));	
 
 
+	// app.get('/logout', authController.logout);
+
+
+
+
 	// app.post('/login', passport.authenticate('admin-login', {
 	// 	successRedirect: '/admin',
 
@@ -37,9 +42,8 @@ module.exports = function(app, passport) {
 //if you run the app & try to visit the dashboard & you aren't logged in, you will be 
 //redirected to the sign-in page 
 
-// 	app.get('/student', isLoggedIn, authController.student);
 
-	// app.get('/logout', authController.logout);
+
 
 
 

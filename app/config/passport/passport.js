@@ -85,7 +85,7 @@ module.exports = function(passport, students) {
 	//serialize 
 	passport.serializeUser(function(user, done) {
 
-		done(null, userUser);
+		done(null, user.student_Id);
 	});
 
 	//deserialize user 
