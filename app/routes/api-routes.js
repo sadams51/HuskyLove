@@ -16,7 +16,7 @@ var passport = require('passport')
 module.exports = function(app) {
 
   //student get and post routes
-  app.get("/student/get/:id", passport.authenticate(function(req, res) {
+  app.get("/student/get/:id", function(req, res) {
     db.Dogs.findOne({
       where:  {
         id: req.params.id
@@ -24,7 +24,7 @@ module.exports = function(app) {
     }).then(function(results) {
       res.json(results);
     });
-  }));
+  });
 
 //student get and post routes
 
@@ -67,6 +67,7 @@ module.exports = function(app) {
   });
 
   // route loads the add students page, where teachers will enter a new student into the student table
+
   app.delete("/delete", function(req, res) {
     db.Students.destroy({
       where: {
@@ -76,6 +77,7 @@ module.exports = function(app) {
       res.render("admin_delete", result);
     });
   });
+
 
 
 };
