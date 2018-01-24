@@ -1,21 +1,15 @@
 var express = require('express');
 var app = express();
-
-//passport and express-session for handling authentication
 var passport = require('passport')
 var session = require('express-session')
-//body-parser to extract body of request & expose in JSON format
 var bodyParser = require('body-parser')
-//dot-env module to handle environment variables 
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
+var cookieParser = require('cookie-parser');
 
 var authController = require('./app/controllers/authcontroller.js');
 
-
-
 var routes = require("./app/routes/api-routes.js")(app);
-
 
 //for BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,24 +37,19 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-
-
 app.get('/', function(req, res) {
 	res.render('login');
 });
 
-
 app.use(express.static('public'));
 
-
-//Models 
 var models = require("./app/models");
 
 //Routes
 var authRoute = require('./app/routes/auth.js')(app, passport);
 
 //load passport strategies 
-require('./app/config/passport/passport.js')(passport, models.Students);
+require('./app/config/passport/passport.js')(passport, models.Students); //TSA maybe change to caps!
 
 //Sync Database
 //importing the models, then calling the sequelize sync function
