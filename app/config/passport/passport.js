@@ -16,8 +16,6 @@ module.exports = function(passport, students) {
 		},
 
 		function(req, email, password, done) {
-			console.log("are we here");
-//			var User = Students; 
 
 			//compares password entered with the bCrypt comparison method 
 			//did we store our password with bCrypt
@@ -66,17 +64,17 @@ module.exports = function(passport, students) {
 	});
 
 	//deserialize user 
-	passport.deserializeUser(function(id, done) {
+	passport.deserializeUser(function(student_id, done) {
 
-		User.findById(id).then(function(user) {
+		User.findById(student_id).then(function(user) {
 			if (user) {
+				console.log("Hey, I got user " + user.student_Email);
 				done(null, user.get());
 			} else {
 					done(user.errors, null);
 				}
 		});	
 	});
-
 
 }		
 
