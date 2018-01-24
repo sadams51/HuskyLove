@@ -49,6 +49,11 @@ app.get('/', function(req, res) {
 	res.render('login');
 });
 
+
+// app.get('/logout', function(req, res) {
+// 	res.render('login');
+// });
+
 app.get('/add', function(req, res) {
 	res.render('admin_add');
 })
