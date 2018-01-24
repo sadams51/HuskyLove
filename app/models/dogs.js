@@ -57,8 +57,11 @@ module.exports = function(sequelize, DataTypes) {
             len: [1, 1],
             isIn: [['X', 'Y']]
         }},    
-    genoType: {type: DataTypes.STRING,validate: {len: [8, 8], is: ["^[a-z]+$", 'i']}},
-    huskyImage: {type: DataTypes.STRING}
+    genoType: {type: DataTypes.STRING,validate: {len: [8, 8], is: ["^[a-z]+$"]}},
+    huskyImage: {type: DataTypes.STRING}, 
+
+  },{
+        timestamps: false
   });
   return Dogs;
 };

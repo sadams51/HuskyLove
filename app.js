@@ -14,7 +14,7 @@ var authController = require('./app/controllers/authcontroller.js');
 
 
 
-var routes = require("./app/routes/html-routes.js")(app);
+var routes = require("./app/routes/api-routes.js")(app);
 
 
 //for BodyParser

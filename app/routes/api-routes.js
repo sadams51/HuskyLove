@@ -7,31 +7,34 @@
 
 var path = require("path");
 var db = require("../models");
+var Sequelize = require('sequelize');
 
 
 // // Routes
 // // =============================================================
 module.exports = function(app) {
 
-//   // Each of the below routes just handles the HTML page that the user gets sent to.
+  //student get and post routes
+  app.get("/student/get/:id", function(req, res) {
+    db.Dogs.findOne({
+      where:  {
+        id: req.params.id
+      }
+    }).then(function(results) {
+      res.json(results);
+    });
+  });
 
-//   // root redirects to login.  
-//   app.get("/", function(req, res) {
-//     //res.redirect(path.join(__dirname, "../public/login.html"));
-//   });
+//student get and post routes
 
-
-//   // index route loads view.html
-//   app.get("/login", function(req, res) {
-//     //res.sendFile(path.join(__dirname, "../public/login.html"));
-
-//   });
-
-//   // index route loads view.html
-//   app.get("/student", function(req, res) {
-//     //res.sendFile(path.join(__dirname, "../public/student.html"));
-//   });
-
+  app.get("/student/puppy1/:geno", function(req, res) {
+    db.Dogs.findOne({
+      where:  Sequelize.where(
+        Sequelize.cast(Sequelize.col('genoType'), 'BINARY'), {$like: req.params.geno})
+    }).then(function(results) {
+      res.json(results);
+    });
+  });
 
   // cms route loads cms.html
   app.get("/admin", function(req, res) {
