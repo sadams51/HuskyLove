@@ -55,7 +55,10 @@ module.exports = function(app) {
 
   // route loads the add students page, where teachers will enter a new student into the student table
   app.post("/admin_add", function(req, res) {
+
+
     db.Students.create({
+
       student_Id: req.body.student_Id,
       student_Email: req.body.student_Email,
       student_Name: req.body.student_Name,
@@ -68,13 +71,14 @@ module.exports = function(app) {
 
   // route loads the add students page, where teachers will enter a new student into the student table
 
-  app.delete("/delete", function(req, res) {
+  app.delete("/admin_delete/:student_Email", function(req, res) {
     db.Students.destroy({
       where: {
-        id: req.params.student_Id
+        student_Email: req.params.student_Email
       }
     }).then(function(result) {
       res.render("admin_delete", result);
+      // res.json(result);
     });
   });
 

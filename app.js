@@ -1,19 +1,21 @@
 var express = require('express');
 var app = express();
-var passport = require('passport')
-var session = require('express-session')
-var bodyParser = require('body-parser')
+var passport = require('passport');
+var session = require('express-session');
+var bodyParser = require('body-parser');
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
 var cookieParser = require('cookie-parser');
 
 var authController = require('./app/controllers/authcontroller.js');
 
-var routes = require("./app/routes/api-routes.js")(app);
-
 //for BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
+
+var routes = require("./app/routes/api-routes.js")(app);
+
+
 
 //For Passport 
 
