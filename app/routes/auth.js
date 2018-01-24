@@ -16,23 +16,41 @@ module.exports = function(app, passport) {
 
 	app.get('/login', authController.login);
 
-	app.post('/login', passport.authenticate('local-login', {
 
-			successRedirect: '/student',
-			failureRedirect: '/login'
-		}));
+	app.post('/login', passport.authenticate('student-login', {
+			successRedirect: '/student', 
+		//=========================================//
+			//add to this: 
+				//function(req, res) {
+					// res.redirect('/students/' + req.user.username);
+				//});	
+		//==========================================//
 
-	app.post('/admin_add', passport.authenticate('local-admin_add', {
-        successRedirect: '/admin_add',
-        failureRedirect: '/admin'
-		}));	
+			failureRedirect: '/login',
+		}
+	));	
+
+
+
+	// app.get('/logout', authController.logout);
+
+
+
+
+	// app.post('/login', passport.authenticate('admin-login', {
+	// 	successRedirect: '/admin',
+
+	// 	failureRedirect: '/login'
+	// }
+	// ));	
+	
+
 
 //if you run the app & try to visit the dashboard & you aren't logged in, you will be 
 //redirected to the sign-in page 
 
-// 	app.get('/student', isLoggedIn, authController.student);
 
-	// app.get('/logout', authController.logout);
+
 
 	function isLoggedIn(req, res, next) {
 		if (req.isAuthenticated())
@@ -50,3 +68,5 @@ module.exports = function(app, passport) {
 	}
 
 }
+
+

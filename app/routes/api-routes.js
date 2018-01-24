@@ -56,7 +56,10 @@ module.exports = function(app) {
 };
 
 
-
+  // route loads the add students page, where teachers will enter a new student into the student table
+  app.get("/add", function(req, res) {
+    res.render("admin_add");
+  });
 
 
 

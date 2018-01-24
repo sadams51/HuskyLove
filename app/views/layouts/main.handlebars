@@ -5,76 +5,127 @@
     <!-- Tab Title -->
     <title>HUSKY LOVE</title>
 
-
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js">
-    </script>
-  
-
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/husky_style.css">
 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
       <!-- Bootstrap JavaScript CDN -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</body>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     
-
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <!--To make the sortable table to work-->
   
-
     <script type="text/javascript" src="https://mottie.github.io/tablesorter/dist/js/jquery.tablesorter.min.js">
     </script>
     
 
 
+  <style>
+  body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+     /* color: #f5f6f7;*/
+     color: #575b63;
+  }
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    }
+  #logo {
+    border: 5px solid #2f2f2f;
+    margin: 2px;
+  }
+  
+  #loginBtn {
+    color: black;
+  }
 
-    <link rel="stylesheet" type="text/css" href="assets/css/husky_style.css">
 
 
+  .text {
+    color: black;
+  }
+
+  .margin {margin-bottom: 25px;}
+  .bg-1 { 
+      background-color: #692b90; /* Purple */
+      color: #ffffff;
+  }
+  .bg-2 { 
+      background-color: #575b63; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 { 
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+  .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+  </style>
   </head>
   <body>
 
 
   <!-- Start Nav -->  
 <nav class="navbar navbar-default">
-<div class="container">
-            <div class="navbar-header">
-            <a class="navbar-brand" href="#">Home of the Blue Valley Huskies</a>
-            </div>
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#">Student Home</a></li>
-                  <li><a href="#">Nav not needed</a></li>
-                  <li><a href="#">just in case</a></li>
-                  </ul>
-                  </div>
-</div>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Blue Valley Northwest Biology 2018</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
 <!-- End Nav -->    
 
- 
-<div class="container">
-<!-- start Outer Div ^^^ --> 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="page-header">
-                <h1></h1>
-            </div>
-         </div>
-    </div>
+ {{!-- first container --}}
+<div class="container-fluid bg-1 text-center">
+  <h3 class="margin">Husky Love</h3>
+  <img src="assets/img/HuskyLoveLogo.jpg" id="logo" class="img-responsive img-thumbnail margin" style="display:inline" alt="huskiesandheart" width="350" height="350">
+  <h3></h3>
+</div>
 <!-- end first row --> 
 
 <!-- second row -->             
-          <div class="col-md-12">
+{{!--           <div class="col-md-12">
 
             <div class="container" align="center">
               <div class="row">
                   <div class="col-lg-12">
                       <img src="assets/img/HuskyLoveLogo.jpg" align="center">
                   </div>
-              </div>
+              </div> --}}
 <!-- third row -->
 
 
@@ -101,6 +152,10 @@
 
     <!-- Page Content - End -->
     <!-- jQuery, Required for Bootstrap JS -->
+    <!-- Footer -->
+  <footer id="footer" class="container-fluid bg-4 text-center">
+    <p>BVNW Biology 2018</p> 
+  </footer>
 
   </body>
 </html>
