@@ -6,9 +6,10 @@
 
 <div>
 
-<a href="/add" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-plus"></span> Add Student</a>
-<a href="/add" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-plus"></span> Student Dashboard</a>
-<a href="/all" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-plus"></span> Logout</a>
+<a href="/admin_add" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-plus"></span> Add Student</a>
+<a href="/admin_delete" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-plus"></span> Delete Student</a>
+<a href="/admin" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-plus"></span> Student Dashboard</a>
+<a href="/login" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-plus"></span> Logout</a>
 
 </div>
 
@@ -16,9 +17,8 @@
  	<table id="myTable" class="tablesorter table table-hover table-sm table-bordered table-striped table-responsive">
     	<thead> 
     		<tr>
-<!--		        <th data-sortable= "true">Student Id</th> -->
+    			<th data-sortable= "true">Student Name</th>
 				<th data-sortable= "true">Student Email</th>
-				<th data-sortable= "true">Student Name</th>
 				<th data-sortable= "true">Student Hour</th>
 				<th data-sortable= "true">Student Teacher Name</th>
 				<th data-sortable= "true">Initial Parent</th>
@@ -68,9 +68,8 @@
 	    <tbody> 
 	        {{#Students}} <!--needs to be title of all the info object (our students table?)-->
 	        <tr> 
-	            <!-- <td>{{student_Id}}</td> -->
-				<td>{{student_Email}}</td>
 				<td>{{student_Name}}</td>
+				<td>{{student_Email}}</td>
 				<td>{{student_Hour}}</td>
 				<td>{{student_TeacherName}}</td>
 				<td>{{initial_Parent}}</td>
