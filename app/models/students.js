@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Students = sequelize.define("Students", {
-    student_Id: {type: DataTypes.STRING, primaryKey: true, validate: {notNull: true}},
-    student_Email: {type: DataTypes.STRING, validate: {isEmail: true, notNull: true}},
-    student_Name: {type: DataTypes.STRING, validate: {notNull: true}},
-    student_Hour: {type: DataTypes.INTEGER(1), validate: {notNull: true}}, //min max 1-7
-    student_TeacherName: {type: DataTypes.STRING, validate: {notNull: true}},
+    student_Id: {type: DataTypes.STRING, primaryKey: true, allowNull: false},
+    student_Email: {type: DataTypes.STRING, allowNull: false, validate: {isEmail: true}},
+    student_Name: {type: DataTypes.STRING, allowNull: false},
+    student_Hour: {type: DataTypes.INTEGER(1), allowNull: false}, //min max 1-7
+    student_TeacherName: {type: DataTypes.STRING, allowNull: false},
 
     initial_Parent: {type: DataTypes.INTEGER},
 
