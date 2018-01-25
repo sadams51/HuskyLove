@@ -7,6 +7,8 @@ var parent = {};
 //holds first_Mate info
 var mate1 = {};
 
+//var studentInfo = require("../../../routes/auth.js");
+//var userInfo = studentInfo.userInfo;
 
 $(document).on("submit", function(event) {
 
@@ -226,8 +228,10 @@ console.log("Created Geno " + newE);
 console.log("From Database ");
 console.log(data.genoType);
 		$("#firstpuppy").html("<br>Your FIRST puppy: <br><img src=assets/img/" + data.huskyImage + ">");
+//		updateStudent();
 	})
 }
+
 
 });
 

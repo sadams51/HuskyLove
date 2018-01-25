@@ -54,5 +54,5 @@ insert into students (student_Id, student_Email, student_Name, student_Hour, stu
 insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$4JG32gMYdfFhNGu87S0Wg.TXcinYNGzIGDUGJnqgSx1jkUmYfmO4C","katvonallen@gmail.com","Kat Allen","2","Jones");
 insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$0oVlVN844oR7TEe0ghDG1.9K3G0gLi/Ve/KBpSTSG39a10XMqmsmm","ilearnarcheology@aol.com","Mia Hawkins","3","Jones");	
 insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$1zFRhO8vciT9cH2M.LWPp.OUb.bLTJ2QMS64XW0OLJtQqKsZ0JaFG","thealexgroup@hotmail.com","Tim Alex","4","Smith");
-insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$448edPvWrWPUvHV9NmSaXOyl3iLK5Icl5bk5ZtPC/oeJurnsW3.jy","huskey_admin@bvnw.edu","Teacher Admin","8","Teachers");
+insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$448edPvWrWPUvHV9NmSaXOyl3iLK5Icl5bk5ZtPC/oeJurnsW3.jy","husky_admin@bvnw.edu","Teacher Admin","8","Teachers");
 
