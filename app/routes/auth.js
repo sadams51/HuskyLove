@@ -29,7 +29,7 @@ module.exports = function(app, passport) {
 
 
 
-	// app.get('/logout', authController.logout);
+	 app.get('/logout', authController.logout);
 
 
 
