@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 
 var routes = require("./app/routes/api-routes.js")(app);
 
+var PORT = process.env.PORT || 3000;
 
 
 //For Passport 
@@ -73,8 +74,8 @@ models.sequelize.sync().then(function() {
 
 
 
-app.listen(3000, function(err) {
+app.listen(PORT, function(err) {
 	if (!err) 
-		console.log("Site is live");
+		console.log("Site is live on " + PORT);
 	else console.log(err)
 });
