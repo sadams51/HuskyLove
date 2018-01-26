@@ -1,7 +1,9 @@
 
 //model definition 
 module.exports = function(sequelize, DataTypes) {
+
   var Dogs = sequelize.define("Dogs", {
+    id: {DataTypes.INT, allowNull: false, primary key: true},
     eyeColorOne: {type: DataTypes.STRING,
         validate: {
             len: [1, 1],

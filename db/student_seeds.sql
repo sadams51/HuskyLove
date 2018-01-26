@@ -1,7 +1,6 @@
-use husky_db;
-
 CREATE TABLE students (
-	student_Id VARCHAR(255) PRIMARY KEY NOT NULL,
+	id INT AUTO_INCREMENT NOT NULL,
+	student_Id VARCHAR(255) NOT NULL,
 	student_Email VARCHAR(255) NOT NULL,
 	student_Name VARCHAR(255) NOT NULL,
 	student_Hour INT(1) NOT NULL,
@@ -46,7 +45,9 @@ CREATE TABLE students (
 	eighth_Offspring INT(3),
 	eighth_Genotype VARCHAR(10),
 	eighth_HuskyImage VARCHAR(10),
-	eighth_createdAt DATETIME
+	eighth_createdAt DATETIME,
+    createdAt TIMESTAMP NOT NULL,
+    PRIMARY KEY(id)	
 );
 
 ALTER TABLE  students ADD UNIQUE (student_Email);

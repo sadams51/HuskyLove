@@ -1,7 +1,5 @@
-use husky_db;
-
 CREATE TABLE dogs (
-	id INT(6) AUTO_INCREMENT PRIMARY KEY,
+	id INT AUTO_INCREMENT NOT NULL,
     eyeColorOne VARCHAR(1) NOT NULL,
     eyeColorTwo VARCHAR(1) NOT NULL,
     coatColorOne VARCHAR(1) NOT NULL,
@@ -13,7 +11,9 @@ CREATE TABLE dogs (
     sexOne VARCHAR(1) NOT NULL,
     sexTwo VARCHAR(1) NOT NULL,
     genoType VARCHAR(10) NOT NULL,
-    huskyImage VARCHAR(7) NOT NULL
+    huskyImage VARCHAR(7) NOT NULL,
+    createdAt TIMESTAMP NOT NULL,
+    PRIMARY KEY(id)
 );
 
 INSERT INTO dogs (eyeColorOne, eyeColorTwo, coatColorOne, coatColorTwo, tailLengthOne, tailLengthTwo, tongueOne, tongueTwo, sexOne, sexTwo, genoType, huskyImage) VALUES ('b','b','G','G','L','L','T','t','X','Y','bbGGLLTtXY','1.jpg');
