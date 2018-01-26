@@ -1,22 +1,21 @@
 
 <!--this will be the admin landing page!-->
 <!--requirements for this page: student table (searchable/delete student), the add student button (takes you to form)-->
-
+ 
 <!--#each does not work in tables....-->
 
-<div>
-
-<a href="/admin_add" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-plus"></span> Add Student</a>
-<a href="/admin_delete" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-minus"></span> Delete Student</a>
-<a href="/admin" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-heart-empty"></span> Student Dashboard</a>
-<a href="/login" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-remove"></span> Logout</a>
-
-<<br><br><br><br>/div>
+<div class="bg-1">
 
 
+<button type="button" class="tableBtn btn btn-outline-secondary btn-lg"><a href="/admin_add"><span class="glyphicon glyphicon-plus"></span> Add Student</a></button>
+<button type="button" class="tableBtn btn btn-outline-secondary btn-lg"><a href="/admin_delete"><span class="glyphicon glyphicon-minus"></span> Delete Student</a></button>
+<button type="button" class="tableBtn btn btn-outline-secondary btn-lg"><a href="/admin" ><span class="glyphicon glyphicon-heart-empty"></span> Student Dashboard</a></button>
+<button type="button" class="tableBtn btn btn-outline-secondary btn-lg"><a href="/login"><span class="glyphicon glyphicon-remove"></span> Logout </a><button>
 
-<div class="col-md-6">
- 	<table id="myTable" class="tablesorter table table-hover table-sm table-bordered table-striped table-responsive">
+
+
+<div class="bg-2 col-md-6 table panel panel-default">
+ 	<table id="myTable" class="tablesorter table table-hover table-bordered table-striped table-responsive">
     	<thead> 
     		<tr>
     			<th data-sortable= "true">Student Name</th>
