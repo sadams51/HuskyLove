@@ -49,7 +49,7 @@ CREATE TABLE students (
 	eighth_createdAt DATETIME
 );
 
-ALTER TABLE  students ADD UNIQUE (student_Id, student_Email);
+ALTER TABLE  students ADD UNIQUE (student_Email);
 
 insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$pi8dEM3ohIkRiEk07qiAoeakQEWGo8kzX2gnBNa2lk5Llc8.ghomW","adams.sarahn@gmail.com","Sarah Adams","1","Smith");
 insert into students (student_Id, student_Email, student_Name, student_Hour, student_TeacherName) values ("$2a$04$4JG32gMYdfFhNGu87S0Wg.TXcinYNGzIGDUGJnqgSx1jkUmYfmO4C","katvonallen@gmail.com","Kat Allen","2","Jones");

@@ -85,11 +85,15 @@ module.exports = function(app, passport) {
     }).catch(function(err){
       console.log("The error is: " + err);
       console.log(err.errors[0].message);
-      res.status(400); res.send(err.errors[0].message);
+      res.status(400); res.send("Sorry, we couldn't add that student.  Here's why: " + err.errors[0].message);
     });
   });
 
   // route loads the add students page, where teachers will enter a new student into the student table
+
+  app.get("/logout", function(req, res) {
+    res.render("login");
+  });
 
   app.get("/admin_delete", function(req, res) {
     res.render("admin_delete");
