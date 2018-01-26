@@ -6,8 +6,6 @@ module.exports = function(passport, students) {
 	var User = students; 
 	var LocalStrategy = require('passport-local').Strategy;
 
-
-
 	passport.use('student-login', new LocalStrategy(
 
 		{
@@ -27,9 +25,6 @@ module.exports = function(passport, students) {
 
 			User.findOne({
 
-//				email: student_Email }, 
-//				function (err,user) {
-					
 			 	where: {
 			 		student_Email: email
 			 	}
@@ -63,25 +58,6 @@ module.exports = function(passport, students) {
 
 	));	
 
-	// passport.use('admin-login', new LocalStrategy (
-
-
-	// 	{
-	// 		usernameField: 'huskey_admin@bvnw.edu',
-	// 		passwordField: '2018Admin',
-	// 		passReqToCallback: true
-	// 	}
-
-	// 	function(username, password, done){
-	// 		if (username) != 'huskey_admin@bvnw.edu' {
-	// 			return done(null, false, {
-	// 				message: "Incorrect login"
-	// 			});	
-	// 		}
-
-	// 	}	
-	// ));
-
 	//serialize 
 	passport.serializeUser(function(user, done) {
 
@@ -93,7 +69,6 @@ module.exports = function(passport, students) {
 
 		User.findById(student_id).then(function(user) {
 			if (user) {
-				console.log("Hey, I got user " + user.student_Email);
 				done(null, user.get());
 			} else {
 					done(user.errors, null);

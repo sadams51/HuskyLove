@@ -222,16 +222,28 @@ function pickAllele5() {
 
 function searchForPuppy() {
 	$.get("/student/puppy1/" + newE, function(data) {
-console.log("Initial Parent " + parent.genoType);
-console.log("Mate " + mate1.genoType);
-console.log("Created Geno " + newE);
-console.log("From Database ");
-console.log(data.genoType);
+		var date = new Date();
+		console.log(date);
+		var updateData = {
+		initial_Parent: parent.id,
+		first_Mate: mate1.id,
+      	first_Offspring: data.id,
+      	first_Genotype: data.genoType,
+      	first_HuskyImage: data.huskyImage //,
+//      	first_createdAt: req.body.first_createdAt
+		}
 		$("#firstpuppy").html("<br>Your FIRST puppy: <br><img src=assets/img/" + data.huskyImage + ">");
-//		updateStudent();
+		updateStudent(updateData);
 	})
 }
 
+function updateStudent(updateData) {
+    $.ajax({
+      method: "PUT",
+      url: "/student/update",
+      data: updateData
+    })
+  }
 
 });
 

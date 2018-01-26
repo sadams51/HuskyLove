@@ -1,13 +1,13 @@
-
 var models = require("../../app/models");
 var authController = require('../controllers/authcontroller.js');
-var userInfo = {};
 
 module.exports = function(app, passport) {
 
 	app.get('/admin', isLoggedIn, authController.admin);	
 
-	app.get('/student', isLoggedIn, isAdmin, authController.student);
+	app.get('/student', isLoggedIn, exportUser, isAdmin, authController.student);
+
+	app.get('/student/add', isLoggedInAdd, authController.admin);	
 
 	app.get('/admin_add', isLoggedIn, authController.admin_add);	
 
@@ -27,11 +27,7 @@ module.exports = function(app, passport) {
 		}
 	));	
 
-
-
-	 app.get('/logout', authController.logout);
-
-
+	// app.get('/logout', authController.logout);
 
 
 	// app.post('/login', passport.authenticate('admin-login', {
@@ -40,14 +36,15 @@ module.exports = function(app, passport) {
 	// 	failureRedirect: '/login'
 	// }
 	// ));	
-	
-
 
 //if you run the app & try to visit the dashboard & you aren't logged in, you will be 
 //redirected to the sign-in page 
 
-
-
+	function isLoggedInAdd(req, res, next) {
+		if (req.isAuthenticated())
+			return next();
+		res.redirect('/student/add');
+	}
 
 	function isLoggedIn(req, res, next) {
 		if (req.isAuthenticated())
@@ -56,8 +53,6 @@ module.exports = function(app, passport) {
 	}
 
 	function isAdmin(req, res, next) {
-//		console.log(req.user);
-        userInfo += req.user
 		if (req.user.student_Email === "husky_admin@bvnw.edu")  {
 		res.redirect('/admin');
 		} else {
@@ -65,7 +60,12 @@ module.exports = function(app, passport) {
 		}
 	}
 	
-exports.userInfo = userInfo;
+	function exportUser(req, res, next) {
+		if (req.isAuthenticated())
+		newEmail = req.user.student_Email;
+		exports.newEmail = newEmail;
+		next();
+	}
 
 }
 
