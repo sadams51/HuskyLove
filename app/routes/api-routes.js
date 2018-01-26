@@ -91,7 +91,13 @@ module.exports = function(app, passport) {
 
   // route loads the add students page, where teachers will enter a new student into the student table
 
-  app.delete("/admin_delete/:student_Email", function(req, res) {
+  app.get("/admin_delete", function(req, res) {
+    res.render("admin_delete");
+  });
+
+
+  app.post("/admin_delete/:student_Email", function(req, res) {
+  
     db.Students.destroy({
       where: {
         student_Email: req.params.student_Email
