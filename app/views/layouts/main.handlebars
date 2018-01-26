@@ -3,12 +3,13 @@
   <head>
 
     <!-- Tab Title -->
-    <title>HUSKY LOVE</title>
+    <title>HUSKY <span class="glyphicons glyphicons-share-alt"></span>LOVE</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/husky_style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
@@ -51,6 +52,7 @@
   h3 {
     font-family: 'Montserrat', sans-serif;
     font: 40px;
+    letter-spacing: 2px;
   }
 
   th {
@@ -66,6 +68,7 @@
   #logo {
     border: 5px solid #2f2f2f;
     margin: 2px;
+
   }
   
   #loginBtn {
@@ -80,6 +83,12 @@
   .table {
     height: 500px;
     overflow: scroll;
+    padding: 0px;
+    margin: 10px;
+  }
+  
+  #myTable{
+    margin: 0px;
   }
 
   .tableBtn a{ color: black; }
@@ -94,8 +103,9 @@
 
   .margin {margin-bottom: 25px;}
   .bg-1 { 
-      background-color: #692b90; /* Purple */
+      background-color: rgba(105, 43, 144, 0.9); /* Purple */
       color: #ffffff;
+
   }
   .bg-2 { 
       background-color: #575b63; /* Dark Blue */
@@ -143,8 +153,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
+
+        <li><a href="/login">Login</a></li>
+        <li><a href="/">Logout</a></li>
+
       </ul>
     </div>
   </div>
@@ -152,11 +164,11 @@
 <!-- End Nav -->    
 
  {{!-- first container --}}
-<div class="container-fluid bg-1 text-center">
-  <h3 class="margin">Husky Love</h3>
-  <img src="assets/img/HuskyLoveLogo.jpg" id="logo" class="img-responsive img-thumbnail margin" style="display:inline" alt="huskiesandheart" width="350" height="350">
-  <h3></h3>
-</div>
+  <div class="container-fluid bg-1 text-center">
+    <h3 class="margin">Husky Love</h3>
+    <img src="assets/img/HuskyLoveLogo.jpg" id="logo" class="img-responsive img-thumbnail margin" style="display:inline" alt="huskiesandheart" width="350" height="350">
+    <h3></h3>
+  </div>
 <!-- end first row --> 
 
 <!-- second row -->             
@@ -186,8 +198,8 @@
 <!-- Login In Form end -->
             
        
-      </div>
-  </div>
+        </div>
+    </div>
 <!-- end Outer Div ^^^ --> 
 
 

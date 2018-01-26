@@ -29,6 +29,7 @@ module.exports = function(app, passport) {
 
 	// app.get('/logout', authController.logout);
 
+
 	// app.post('/login', passport.authenticate('admin-login', {
 	// 	successRedirect: '/admin',
 
