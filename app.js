@@ -1,3 +1,20 @@
+//		** items to fix** //
+/*
+
+Hash password on input
+
+What does logout do?  I don't think it destroys anything in session.
+
+Write delete on.click event so we don't have to escape email when deleting records
+
+Create the timers and other puppy info
+
+Student Add page look and feel
+
+Student Delete page look and feel, take out the logout button
+
+*/
+
 var express = require('express');
 var app = express();
 var passport = require('passport');
