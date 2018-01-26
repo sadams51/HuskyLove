@@ -19,24 +19,24 @@
 
 
 <!-- Second Container -->
-<div class="container-fluid bg-2 text-center">
-  <h3 class="margin"></h3>
-  <p class="instructions">Login with your email and student ID. Then enter the ID of your assigned husky and the ID of a mate of the opposite sex. After 18 hours, you'll see your puppy! </p>
+  <div class="container-fluid bg-2 text-center">
+    <h3 class="margin"></h3>
+    <p class="instructions">Login with your email and student ID. Then enter the ID of your assigned husky and the ID of a mate of the opposite sex. After 18 hours, you'll see your puppy! </p>
 
   <form id="login" name="login" method="post" action="login">
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input id="email" class="text form-control form-control-sm" name="email" type="email"/>
-
-      <label for="password">Password</label>
-      <input id="pswd" class="text form-control form-control-sm" name="password" type="password"/>
-      
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input id="email" type="email" class="text form-control form-control-sm" placeholder="Email" name="email">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="password">Password</label>
+        <input id="pswd" type="password" class="text form-control form-control-sm" name="password" placeholder="Password">
+      </div>
     </div>
-
-    <div>
-     <input id="loginBtn" class="btn btn-default btn-md" type="submit" name="Login">
-    </div>
+    <button type="submit" id="loginBtn" class="btn btn-default btn-sm" name="Login">Login</button>
   </form>
+
 
 </div>
 
