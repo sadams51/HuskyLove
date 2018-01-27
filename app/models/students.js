@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Students = sequelize.define("Students", {
+
     id: {type: DataTypes.INTEGER, primaryKey: true},
 
     student_Id: {type: DataTypes.STRING, allowNull: false, unique: true},

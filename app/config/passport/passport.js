@@ -69,6 +69,7 @@ module.exports = function(passport, students) {
 
 		User.findById(id).then(function(user) {
 			if (user) {
+				console.log("**** EMAIL  ***** " + user.student_Id)
 				done(null, user.get());
 			} else {
 					done(user.errors, null);
