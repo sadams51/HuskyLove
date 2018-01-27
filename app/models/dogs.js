@@ -3,7 +3,9 @@
 module.exports = function(sequelize, DataTypes) {
 
   var Dogs = sequelize.define("Dogs", {
-    id: {type: DataTypes.INTEGER, allowNull: false, primary key: true},
+
+    id: {type: DataTypes.INTEGER, allowNull: false, primaryKey: true},
+
     eyeColorOne: {type: DataTypes.STRING,
         validate: {
             len: [1, 1],

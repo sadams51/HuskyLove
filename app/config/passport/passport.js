@@ -61,14 +61,15 @@ module.exports = function(passport, students) {
 	//serialize 
 	passport.serializeUser(function(user, done) {
 
-		done(null, user.student_Id);
+		done(null, user.id);
 	});
 
 	//deserialize user 
-	passport.deserializeUser(function(student_id, done) {
+	passport.deserializeUser(function(id, done) {
 
-		User.findById(student_id).then(function(user) {
+		User.findById(id).then(function(user) {
 			if (user) {
+				console.log("**** EMAIL  ***** " + user.student_Id)
 				done(null, user.get());
 			} else {
 					done(user.errors, null);
